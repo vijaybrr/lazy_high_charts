@@ -42,7 +42,7 @@ module LazyHighCharts
         })()
         </script>
         EOJS
-      elsif defined?(Turbolinks) && request.headers["X-XHR-Referer"]
+      elsif defined?(Turbolinks) && request.present? && request.headers["X-XHR-Referer"]
         graph =<<-EOJS
         <script type="text/javascript">
         (function() {
